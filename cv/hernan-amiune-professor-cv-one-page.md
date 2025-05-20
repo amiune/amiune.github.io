@@ -1,4 +1,7 @@
+Hernan Amiune
+
 📧 [amiune@gmail.com](mailto:amiune@gmail.com)
+
 🌐 [Teaching](https://www.freecodingtour.com) | [GitHub](https://github.com/amiune) | [Topcoder](https://www.topcoder.com/members/amiune) | [NGA Challenge Prize](https://bit.ly/myNGAprize)
 
 ### 🎓 Academic Experience
