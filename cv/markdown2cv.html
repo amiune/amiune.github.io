@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hernan Amiune's CV</title>
+    <meta
+      name="description"
+      content="Hernan Amiune's CV"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
+  </head>
+
+<body>
+
+  
+
+    <main class="container">
+        <section>
+          <div id="content">
+            <section id="progress">
+              <h1>Loading Content</h1>
+              <progress id="progress-2"></progress>
+            </section>
+          </div>
+        </section>
+    </main>
+
+    <script src="https://unpkg.com/markdown-it@8.4.2/dist/markdown-it.min.js"></script>
+    <script>
+		/*!
+		 * Markdown 2 CV
+		 * Convert a markdown to a pretty CV
+		 *
+		 * Developer: Hernan Amiune
+		 * Licensed under MIT
+		 */
+
+		const CV_URL = "https://github.com/amiune/amiune.github.io/blob/master/cv/hernan-amiune-professor-cv-one-page.md";
+
+		function reload_page(){
+			
+			markdown_to_fetch = "";
+
+			markdown_to_fetch = CV_URL;
+
+			fetch(markdown_to_fetch).then(async (response) => {
+				if (response.ok) {
+					text = await response.text();
+					let md = window.markdownit();
+					document.getElementById('content').innerHTML = md.render(text);
+				}
+			})
+
+		}
+
+		reload_page();
+	</script>
+</body>
+</html>
