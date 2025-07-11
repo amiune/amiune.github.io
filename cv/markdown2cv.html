@@ -1,3 +1,11 @@
+<!--
+     Markdown 2 CV
+		 Convert a markdown to a pretty CV
+		 
+		 Developer: Hernan Amiune
+     hernan.amiune.com
+		 Licensed under MIT
+-->
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
   <head>
@@ -13,8 +21,6 @@
 
 <body>
 
-  
-
     <main class="container">
         <section>
           <div id="content">
@@ -28,33 +34,17 @@
 
     <script src="https://unpkg.com/markdown-it@8.4.2/dist/markdown-it.min.js"></script>
     <script>
-		/*!
-		 * Markdown 2 CV
-		 * Convert a markdown to a pretty CV
-		 *
-		 * Developer: Hernan Amiune
-		 * Licensed under MIT
-		 */
 
 		const CV_URL = "https://raw.githubusercontent.com/amiune/amiune.github.io/refs/heads/master/cv/hernan-amiune-professor-cv-one-page.md";
 
-		function reload_page(){
-			
-			markdown_to_fetch = "";
+    fetch(CV_URL).then(async (response) => {
+      if (response.ok) {
+        text = await response.text();
+        let md = window.markdownit();
+        document.getElementById('content').innerHTML = md.render(text);
+      }
+    })
 
-			markdown_to_fetch = CV_URL;
-
-			fetch(markdown_to_fetch).then(async (response) => {
-				if (response.ok) {
-					text = await response.text();
-					let md = window.markdownit();
-					document.getElementById('content').innerHTML = md.render(text);
-				}
-			})
-
-		}
-
-		reload_page();
 	</script>
 </body>
 </html>
