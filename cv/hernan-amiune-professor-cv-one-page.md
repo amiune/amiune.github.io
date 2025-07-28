@@ -21,7 +21,7 @@
 ### 💼 Industry Experience
 
 **AI Consultant**
-*GenerativeNetworks.com* — *2021–Present*
+*Autonomo* — *2021–Present*
 
 * Helped startups adopt ML from prototyping to deployment.
 * Specialized in teaching AI/ML to companies and institutions.

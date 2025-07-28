@@ -7,7 +7,7 @@
 ### 💻 Professional Experience
 
 **AI Consultant & Full-Stack Developer**
-*GenerativeNetworks.com* — *2021–Present*
+*Autonomo* — *2021–Present*
 
 * Designed and deployed AI/ML systems for startups and SMEs.
 * Integrated LLMs with RAG, agents, and vector databases for cost-efficient solutions in Spanish.
