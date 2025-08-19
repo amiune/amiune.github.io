@@ -2,7 +2,7 @@
 
 📧 [amiune@gmail.com](mailto:amiune@gmail.com)
 
-🌐 [Teaching](https://www.freecodingtour.com) | [GitHub](https://github.com/amiune) | [Topcoder](https://www.topcoder.com/members/amiune) | [NGA Challenge Prize](https://bit.ly/myNGAprize)
+🌐 [Teaching](https://www.freecodingtour.com) | [GitHub](https://github.com/amiune) | [Topcoder](https://www.topcoder.com/members/amiune) | [NGA Challenge Prize](https://www.doncio.navy.mil/CHIPS/ArticleDetails.aspx?ID=14249)
 
 ### 🎓 Academic Experience
 
