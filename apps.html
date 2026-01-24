@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Apps - Hernan Amiune</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <style>
+    body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+    a {text-decoration: none;}
+    .apps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 16px;
+      justify-items: center;
+    }
+    /* When few items, limit card width so they don't stretch too wide */
+    .app-card-wrapper {
+      width: 100%;
+      max-width: 350px;
+    }
+    .app-card {
+      transition: transform 0.2s, box-shadow 0.2s;
+      height: 100%;
+    }
+    .app-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    }
+    .app-icon {
+      font-size: 48px;
+      margin-bottom: 16px;
+    }
+    .tag {
+      display: inline-block;
+      padding: 4px 12px;
+      margin: 4px;
+      border-radius: 16px;
+      font-size: 12px;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="w3-main w3-padding-large">
+
+      <!-- Header -->
+      <header class="w3-container w3-center" style="padding:64px 16px">
+        <h1 class="w3-xxlarge"><b>My Apps</b></h1>
+        <p class="w3-large w3-text-grey">A collection of applications I've built</p>
+        <a href="index.html">
+          <button class="w3-button w3-light-grey w3-padding-large w3-margin-top">Back to Home</button>
+        </a>
+      </header>
+
+      <!-- Apps Grid -->
+      <div class="apps-grid w3-center">
+        
+        <!-- SB Diary -->
+        <div class="app-card-wrapper">
+          <div class="w3-card w3-padding-large app-card">
+            <div class="app-icon">📔</div>
+            <h3><b>SB Diary</b></h3>
+            <p class="w3-text-grey">Small Business Daily Journal. Track your entrepreneurial journey with daily entries, mood tracking, and financial insights.</p>
+            <div>
+              <span class="tag w3-light-blue">iOS</span>
+              <span class="tag w3-amber">SwiftUI</span>
+            </div>
+            <br>
+            <a href="apps/sbdiary/index.html" class="w3-button w3-black w3-round">View App</a>
+          </div>
+        </div>
+
+        <!-- Copy this block for each new app:
+        <div class="app-card-wrapper">
+          <div class="w3-card w3-padding-large app-card">
+            <div class="app-icon">🌐</div>
+            <h3><b>App Name</b></h3>
+            <p class="w3-text-grey">Description here.</p>
+            <div>
+              <span class="tag w3-light-blue">Tag</span>
+            </div>
+            <br>
+            <a href="#" class="w3-button w3-black w3-round">View App</a>
+          </div>
+        </div>
+        -->
+
+      </div>
+
+      <!-- Footer -->
+      <footer class="w3-container w3-center w3-padding-64">
+        <p class="w3-text-grey">Have questions about any of these projects?</p>
+        <a href="https://github.com/amiune" class="w3-button w3-light-grey w3-round">View on GitHub</a>
+      </footer>
+
+    </div>
+  </body>
+</html>
