@@ -2,9 +2,14 @@
 
 📧 [amiune@gmail.com](mailto:amiune@gmail.com)
 
-🌐 [Teaching](https://www.freecodingtour.com) | [GitHub](https://github.com/amiune) | [Topcoder](https://www.topcoder.com/members/amiune) | [NGA Challenge Prize](https://www.doncio.navy.mil/CHIPS/ArticleDetails.aspx?ID=14249)
+🌐 [Teaching](https://www.freecodingtour.com) | [GitHub](https://github.com/amiune) | [Topcoder](https://profiles.topcoder.com/amiune) | [NGA Challenge Prize](https://www.doncio.navy.mil/CHIPS/ArticleDetails.aspx?ID=14249)
 
 ### 🎓 Academic Experience
+
+**Professor of Programming, How to use AI for coding**
+*Bootcamps* — *2025–2026*
+
+* Delivered project-based learning courses to create data science webs and apps for people without programming expertise.
 
 **Professor of Programming, Artificial Intelligence & Robotics**
 *IMMUNE Technology Institute* — *2022–2025*
@@ -33,7 +38,7 @@
 
 * Specialized in discrete optimization, ML, and deep learning competitions.
 * Full-stack development and idea generation for NASA, Harvard, Microsoft, BestBuy, and others.
-* Topcoder handle: [amiune](https://www.topcoder.com/members/amiune)
+* Topcoder handle: [amiune](https://profiles.topcoder.com/amiune)
 
 **CTO & Co-Founder**
 *elMejorTrato.com* — *2008–2021*
