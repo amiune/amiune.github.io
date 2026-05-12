@@ -7,7 +7,7 @@
 ### 🎓 Academic Experience
 
 **Professor of Programming, How to use AI for coding**
-*Bootcamps* — *2025–2026*
+*Generative Networks* — *2025–2026*
 
 * Delivered project-based learning courses to create data science webs and apps for people without programming expertise.
 
@@ -26,7 +26,7 @@
 ### 💼 Industry Experience
 
 **AI Consultant**
-*Autonomo* — *2021–Present*
+*Generative Networks* — *2021–Present*
 
 * Helped startups adopt ML from prototyping to deployment.
 * Specialized in teaching AI/ML to companies and institutions.
