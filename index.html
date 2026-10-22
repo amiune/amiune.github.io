@@ -1,40 +1,456 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>Hernan Amiune</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <meta name="theme-color" content="#F5F0E7">
     <style>
-    body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
-    .w3-row-padding img {margin-bottom: 12px}
-    .w3-btn, .w3-button {width:200px}
-    a{text-decoration: none;}
+      :root {
+        color-scheme: light;
+        --paper: #F5F0E7;
+        --ink: #30251F;
+        --muted: #73645A;
+        --accent: #A34F36;
+        --rule: #D8CEC2;
+        --gutter: clamp(1.5rem, 6vw, 6rem);
+        --coffee-light: 0deg;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scrollbar-width: none;
+        overscroll-behavior-y: none;
+      }
+
+      html::-webkit-scrollbar {
+        display: none;
+      }
+
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      ::selection {
+        background: var(--accent);
+        color: var(--paper);
+      }
+
+      .page {
+        position: relative;
+        display: grid;
+        align-items: center;
+        width: min(100%, 90rem);
+        min-height: 100vh;
+        min-height: 100svh;
+        margin-inline: auto;
+        padding: clamp(3.5rem, 9vh, 6rem) var(--gutter);
+      }
+
+      .page::before,
+      .page::after {
+        position: absolute;
+        right: var(--gutter);
+        left: var(--gutter);
+        height: 1px;
+        content: "";
+        pointer-events: none;
+      }
+
+      .page::before {
+        top: 2.5rem;
+        background: linear-gradient(to right, var(--accent) 4rem, var(--rule) 4rem);
+      }
+
+      .page::after {
+        bottom: 2.5rem;
+        background: var(--rule);
+      }
+
+      .layout {
+        display: grid;
+        grid-template-columns: 1.05fr 1fr;
+        align-items: center;
+        gap: clamp(2rem, 5vw, 5rem);
+      }
+
+      .intro {
+        min-width: 0;
+      }
+
+      h1 {
+        margin: 0 0 2rem;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(4rem, 9vw, 8.5rem);
+        font-weight: 400;
+        letter-spacing: -0.065em;
+        line-height: 0.96;
+      }
+
+      h1 span {
+        display: block;
+      }
+
+      .surname {
+        font-style: italic;
+      }
+
+      .introduction {
+        margin: 0;
+        font-size: clamp(1rem, 1.3vw, 1.125rem);
+        line-height: 1.85;
+      }
+
+      .barista {
+        color: var(--muted);
+      }
+
+      .profile-links {
+        max-width: 24rem;
+        margin-top: 2.75rem;
+      }
+
+      .profile-links ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .profile-links li {
+        border-bottom: 1px solid var(--rule);
+      }
+
+      .profile-links li:first-child {
+        border-top: 1px solid var(--rule);
+      }
+
+      .profile-link {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        min-height: 4rem;
+        padding: 0.875rem 0.75rem;
+        color: inherit;
+        font-size: 0.9375rem;
+        font-weight: 500;
+        letter-spacing: 0.025em;
+        text-decoration: none;
+        transition: color 180ms ease, background-color 180ms ease;
+      }
+
+      .link-label,
+      .link-arrow {
+        display: inline-block;
+        transition: transform 180ms ease;
+      }
+
+      .link-arrow {
+        color: var(--accent);
+        font-size: 1.375rem;
+        font-weight: 400;
+        line-height: 1;
+      }
+
+      .profile-link:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 4px;
+        background: rgb(163 79 54 / 6%);
+        color: var(--accent);
+      }
+
+      @media (hover: hover) {
+        .profile-link:hover {
+          background: rgb(163 79 54 / 6%);
+          color: var(--accent);
+        }
+
+        .profile-link:hover .link-label {
+          transform: translateX(0.25rem);
+        }
+
+        .profile-link:hover .link-arrow {
+          transform: translate(0.2rem, -0.2rem);
+        }
+      }
+
+      /* Layered, uneven rings suggest a coffee stain without an image asset. */
+      .coffee-art {
+        position: relative;
+        width: 100%;
+        max-width: 34rem;
+        aspect-ratio: 1;
+        justify-self: center;
+        pointer-events: none;
+        --shadow-offset: clamp(0.2rem, 1.2vw, 1.1rem);
+      }
+
+      .coffee-art::before {
+        position: absolute;
+        inset: 13%;
+        border-radius: 50%;
+        background:
+          radial-gradient(ellipse at 75% 70%, rgb(163 79 54 / 6%), transparent 60%),
+          radial-gradient(ellipse at 20% 20%, rgb(163 79 54 / 5%), transparent 55%);
+        filter: blur(0.5rem);
+        box-shadow: var(--shadow-offset) var(--shadow-offset)
+          calc(var(--shadow-offset) * 2) rgb(75 42 25 / 12%);
+        transform: rotate(var(--coffee-light));
+        content: "";
+      }
+
+      .coffee-ring {
+        position: absolute;
+        inset: 10%;
+        border-radius: 48% 52% 49% 51% / 51% 46% 54% 49%;
+        background: conic-gradient(
+          from calc(22deg + var(--coffee-light)),
+          rgb(163 79 54 / 12%),
+          rgb(124 67 39 / 36%) 14%,
+          rgb(163 79 54 / 12%) 27%,
+          rgb(163 79 54 / 3%) 34%,
+          rgb(124 67 39 / 26%) 43%,
+          rgb(163 79 54 / 40%) 60%,
+          rgb(163 79 54 / 8%) 74%,
+          rgb(163 79 54 / 30%) 88%,
+          rgb(163 79 54 / 12%)
+        );
+        -webkit-mask-image: radial-gradient(
+          ellipse farthest-side,
+          transparent 91%, #000 93%, #000 96%, transparent 100%
+        );
+        mask-image: radial-gradient(
+          ellipse farthest-side,
+          transparent 91%, #000 93%, #000 96%, transparent 100%
+        );
+        transform: rotate(-24deg);
+      }
+
+      .coffee-art::after {
+        position: absolute;
+        inset: 10.5% 9% 9.5% 10%;
+        border: 1px solid rgb(124 67 39 / 17%);
+        border-top-color: transparent;
+        border-right-color: rgb(124 67 39 / 7%);
+        border-radius: 49% 51% 47% 53% / 52% 48% 52% 48%;
+        transform: rotate(calc(15deg + var(--coffee-light)));
+        content: "";
+      }
+
+      .coffee-drops {
+        position: absolute;
+        right: 15%;
+        bottom: 10%;
+        width: 2.75rem;
+        height: 3rem;
+        background:
+          radial-gradient(ellipse at 35% 25%, rgb(163 79 54 / 25%) 0 2px, transparent 3px),
+          radial-gradient(ellipse at 65% 65%, rgb(163 79 54 / 16%) 0 1px, transparent 2px),
+          radial-gradient(ellipse at 20% 85%, rgb(163 79 54 / 12%) 0 3px, transparent 4px);
+        transform: rotate(-18deg);
+      }
+
+      @keyframes arrive {
+        from {
+          opacity: 0;
+          transform: translateY(0.75rem);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (prefers-reduced-motion: no-preference) {
+        .intro {
+          animation: arrive 650ms ease-out both;
+        }
+      }
+
+      @media (max-width: 47.5rem) {
+        .page {
+          padding-block: 3.5rem;
+        }
+
+        .page::before {
+          top: 1.5rem;
+        }
+
+        .page::after {
+          bottom: 1.5rem;
+        }
+
+        .layout {
+          grid-template-columns: minmax(0, 1fr);
+          gap: 1.5rem;
+        }
+
+        .coffee-art {
+          grid-row: 1;
+          width: clamp(8.5rem, 38vw, 13rem);
+          justify-self: end;
+        }
+
+        h1 {
+          font-size: clamp(3.75rem, 16vw, 6.5rem);
+        }
+
+        .profile-links {
+          max-width: none;
+          margin-top: 2rem;
+        }
+      }
+
+      /* Keep the illustration and every link visible on short phones. */
+      @media (max-width: 47.5rem) and (max-height: 44rem) {
+        .intro {
+          grid-area: 1 / 1;
+        }
+
+        .coffee-art {
+          grid-area: 1 / 1;
+          align-self: start;
+          width: clamp(4rem, 20vw, 7rem);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .profile-link,
+        .link-label,
+        .link-arrow {
+          transition: none;
+        }
+
+        .profile-link:hover .link-label,
+        .profile-link:hover .link-arrow {
+          transform: none;
+        }
+      }
     </style>
   </head>
   <body>
-    <div class="w3-main w3-padding-large">
+    <main class="page" id="home" aria-labelledby="name">
+      <div class="layout">
+        <header class="intro">
+          <h1 id="name"><span>Hernan</span> <span class="surname">Amiune</span></h1>
+          <p class="introduction">
+            Engineer. Entrepreneur<br>
+            <span class="barista">Amateur barista &#9749;</span>
+          </p>
+          <nav class="profile-links" aria-label="Profile links">
+            <ul>
+              <li>
+                <a class="profile-link" href="https://www.linkedin.com/in/amiune/">
+                  <span class="link-label">CV</span>
+                  <span class="link-arrow" aria-hidden="true">&#8599;</span>
+                </a>
+              </li>
+              <li>
+                <a class="profile-link" href="https://github.com/amiune">
+                  <span class="link-label">GitHub</span>
+                  <span class="link-arrow" aria-hidden="true">&#8599;</span>
+                </a>
+              </li>
+              <li>
+                <a class="profile-link" href="https://www.topcoder.com/members/amiune">
+                  <span class="link-label">TopCoder</span>
+                  <span class="link-arrow" aria-hidden="true">&#8599;</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </header>
+        <div class="coffee-art" aria-hidden="true">
+          <span class="coffee-ring"></span>
+          <span class="coffee-drops"></span>
+        </div>
+      </div>
+    </main>
+    <script>
+      (() => {
+        const coffee = document.querySelector(".coffee-art");
+        const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+        let angle = 0;
+        let pendingDelta = 0;
+        let frame = null;
+        let touchY = null;
 
-      <header class="w3-container w3-center" style="padding:128px 16px" id="home">
-        <h1 class="w3-jumbo"><b>Hernan Amiune</b></h1>
-        <p>
-        Engineer. Entrepreneur<br/> 
-        Amateur barista &#9749;
-        </p>
-        <a href="https://www.linkedin.com/in/amiune/">
-            <button class="w3-button w3-light-grey w3-padding-large w3-margin-top">CV</button>
-        </a>
-        <br/>
-        <a href="https://github.com/amiune">
-            <button class="w3-button w3-light-grey w3-padding-large w3-margin-top">GitHub</button>
-        </a>
-        <br/>
-        <a href="https://www.topcoder.com/members/amiune">
-            <button class="w3-button w3-light-grey w3-padding-large w3-margin-top">TopCoder</button>
-        </a>
-        <br/>
-      </header>
-    </div>
+        function renderLight() {
+          angle = ((angle + pendingDelta * 0.5) % 360 + 360) % 360;
+          coffee.style.setProperty("--coffee-light", `${angle}deg`);
+          pendingDelta = 0;
+          frame = null;
+        }
+
+        function rotateLight(event, delta) {
+          if (reducedMotion.matches || delta === 0) return;
+
+          // Preserve normal scrolling if zoom or a small window makes content overflow.
+          const pageOverflows = document.documentElement.scrollHeight > window.innerHeight + 1;
+          if (!pageOverflows && event.cancelable) event.preventDefault();
+
+          pendingDelta += delta;
+          if (frame === null) frame = requestAnimationFrame(renderLight);
+        }
+
+        document.addEventListener("wheel", event => {
+          if (event.ctrlKey || event.metaKey || event.shiftKey) return;
+          const unit = event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? window.innerHeight : 1;
+          rotateLight(event, event.deltaY * unit);
+        }, { passive: false });
+
+        document.addEventListener("touchstart", event => {
+          touchY = event.touches.length === 1 ? event.touches[0].clientY : null;
+        }, { passive: true });
+
+        document.addEventListener("touchmove", event => {
+          if (touchY === null || event.touches.length !== 1) {
+            touchY = null;
+            return;
+          }
+          const nextY = event.touches[0].clientY;
+          const delta = touchY - nextY;
+          touchY = nextY;
+          rotateLight(event, delta);
+        }, { passive: false });
+
+        function endTouch() {
+          touchY = null;
+        }
+
+        document.addEventListener("touchend", endTouch, { passive: true });
+        document.addEventListener("touchcancel", endTouch, { passive: true });
+
+        document.addEventListener("keydown", event => {
+          if (event.defaultPrevented || event.ctrlKey || event.metaKey || event.altKey) return;
+          if (event.target.closest("input, textarea, select, button, [contenteditable]")) return;
+
+          const delta = {
+            ArrowDown: 40,
+            ArrowUp: -40,
+            PageDown: window.innerHeight * 0.85,
+            PageUp: -window.innerHeight * 0.85,
+            " ": window.innerHeight * (event.shiftKey ? -0.85 : 0.85)
+          }[event.key];
+          if (delta !== undefined) rotateLight(event, delta);
+        });
+
+        reducedMotion.addEventListener("change", () => {
+          if (!reducedMotion.matches) return;
+          if (frame !== null) cancelAnimationFrame(frame);
+          frame = null;
+          pendingDelta = 0;
+          angle = 0;
+          coffee.style.removeProperty("--coffee-light");
+        });
+      })();
+    </script>
   </body>
 </html>
